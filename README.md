@@ -1,6 +1,6 @@
 ### Zabbix task_1
 
-Vagrantfile => [site13.pp](Vagrantfile)
+Vagrantfile => [Vagrantfile](Vagrantfile)
 
 Logfile =>[out13.log](out13.log)
 ##
