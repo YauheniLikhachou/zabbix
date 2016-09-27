@@ -2,6 +2,8 @@
 
 ## Configs:
 ### => [Vagrantfile](Vagrantfile)
+### => [Outvagrant.log](outvagrant.log)
+
 
 Logfile =>[out13.log](out13.log)
 ##
