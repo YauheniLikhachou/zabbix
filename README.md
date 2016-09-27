@@ -5,6 +5,8 @@
 ##### => [Out log of vagrant](outvagrant.log)
 ##### => [conf.cnf](source/conf.cnf)
 ##### => [provision file](provision.yml)
+##### => [zabbix config](zabbix.conf)
+##### => [zabbix server config](zabbix_server.conf)
 
 ##
 ![](source/scrin/Screenshot.png)
