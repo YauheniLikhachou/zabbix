@@ -2,7 +2,7 @@
 
 ## Configs:
 ### => [Vagrantfile](Vagrantfile)
-### => [Outvagrant.log](outvagrant.log)
+### => [Out log of vagrant](outvagrant.log)
 
 
 Logfile =>[out13.log](out13.log)
