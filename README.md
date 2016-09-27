@@ -4,9 +4,9 @@
 ##### => [Vagrantfile](Vagrantfile)
 ##### => [Out log of vagrant](outvagrant.log)
 ##### => [conf.cnf](source/conf.cnf)
-##### => [provision file](provision.yml)
-##### => [zabbix config](zabbix.conf)
-##### => [zabbix server config](zabbix_server.conf)
+##### => [provision file](source/provision.yml)
+##### => [zabbix config](source/zabbix.conf)
+##### => [zabbix server config](source/zabbix_server.conf)
 
 ##
 
