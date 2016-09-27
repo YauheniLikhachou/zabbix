@@ -1,6 +1,7 @@
 ### Zabbix task_1
 
-Vagrantfile => [Vagrantfile](Vagrantfile)
+## Configs:
+# => [Vagrantfile](Vagrantfile)
 
 Logfile =>[out13.log](out13.log)
 ##
