@@ -1,9 +1,9 @@
 # Zabbix task_1
 
 ## Configs:
-### => [Vagrantfile](Vagrantfile)
-### => [Out log of vagrant](outvagrant.log)
-
+#### => [Vagrantfile](Vagrantfile)
+#### => [Out log of vagrant](outvagrant.log)
+#### => [conf.cnf](source/conf.cnf)
 
 Logfile =>[out13.log](out13.log)
 ##
