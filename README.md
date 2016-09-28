@@ -2,11 +2,10 @@
 
 ## Configs:
 ##### => [Vagrantfile](Vagrantfile)
-##### => [Out log of vagrant](outvagrant.log)
-##### => [conf.cnf](source/conf.cnf)
+##### => [Out log of vagrant](outvagrant_task2.log)
 ##### => [provision file](source/provision.yml)
-##### => [zabbix config](source/zabbix.conf)
-##### => [zabbix server config](source/zabbix_server.conf)
+##### => [Script](source/agent.sh)
+##### => [zabbix server config](source/zabbix_agentd.conf)
 
 ##
 
