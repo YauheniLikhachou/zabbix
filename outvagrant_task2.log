@@ -1,0 +1,66 @@
+Bringing machine 'zubagent' up with 'virtualbox' provider...
+==> zubagent: Importing base box 'sbeliakou/centos-6.7-x86_64'...
+[KProgress: 10%[KProgress: 20%[KProgress: 30%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> zubagent: Matching MAC address for NAT networking...
+==> zubagent: Checking if box 'sbeliakou/centos-6.7-x86_64' is up to date...
+==> zubagent: Setting the name of the VM: zabix_task2_zubagent_1475083124229_8483
+==> zubagent: Fixed port collision for 22 => 2222. Now on port 2201.
+==> zubagent: Clearing any previously set network interfaces...
+==> zubagent: Preparing network interfaces based on configuration...
+    zubagent: Adapter 1: nat
+    zubagent: Adapter 2: hostonly
+==> zubagent: Forwarding ports...
+    zubagent: 22 (guest) => 2201 (host) (adapter 1)
+==> zubagent: Running 'pre-boot' VM customizations...
+==> zubagent: Booting VM...
+==> zubagent: Waiting for machine to boot. This may take a few minutes...
+    zubagent: SSH address: 127.0.0.1:2201
+    zubagent: SSH username: vagrant
+    zubagent: SSH auth method: private key
+    zubagent: 
+    zubagent: Vagrant insecure key detected. Vagrant will automatically replace
+    zubagent: this with a newly generated keypair for better security.
+    zubagent: 
+    zubagent: Inserting generated public key within guest...
+    zubagent: Removing insecure key from the guest if it's present...
+    zubagent: Key inserted! Disconnecting and reconnecting using new SSH key...
+==> zubagent: Machine booted and ready!
+==> zubagent: Checking for guest additions in VM...
+==> zubagent: Setting hostname...
+==> zubagent: Configuring and enabling network interfaces...
+==> zubagent: Mounting shared folders...
+    zubagent: /vagrant => /home/Student/zabbix/zabix_task2
+==> zubagent: Running provisioner: ansible...
+    zubagent: Running ansible-playbook...
+PYTHONUNBUFFERED=1 ANSIBLE_NOCOLOR=true ANSIBLE_HOST_KEY_CHECKING=false ANSIBLE_SSH_ARGS='-o UserKnownHostsFile=/dev/null -o IdentitiesOnly=yes -o ControlMaster=auto -o ControlPersist=60s' ansible-playbook --connection=ssh --timeout=30 --limit="zubagent" --inventory-file=/home/Student/zabbix/zabix_task2/.vagrant/provisioners/ansible/inventory -vv source/provision.yml
+No config file found; using defaults
+1 plays in source/provision.yml
+
+PLAY [Installing zabbix agent] *************************************************
+
+TASK [setup] *******************************************************************
+ok: [zubagent]
+
+TASK [Installing Zabbix repo] **************************************************
+changed: [zubagent] => {"changed": true, "msg": "", "rc": 0, "results": ["Loaded plugins: fastestmirror\nSetting up Install Process\nExamining /var/tmp/yum-root-oi6CoU/zabbix-release-2.2-1.el6.noarch.rpm: zabbix-release-2.2-1.el6.noarch\nMarking /var/tmp/yum-root-oi6CoU/zabbix-release-2.2-1.el6.noarch.rpm to be installed\nDetermining fastest mirrors\n * base: ftp.byfly.by\n * epel: mirror.datacenter.by\n * extras: ftp.byfly.by\n * ius: mirrors.ircam.fr\n * updates: ftp.byfly.by\nResolving Dependencies\n--> Running transaction check\n---> Package zabbix-release.noarch 0:2.2-1.el6 will be installed\n--> Finished Dependency Resolution\n\nDependencies Resolved\n\n================================================================================\n Package          Arch     Version     Repository                          Size\n================================================================================\nInstalling:\n zabbix-release   noarch   2.2-1.el6   /zabbix-release-2.2-1.el6.noarch    20 k\n\nTransaction Summary\n================================================================================\nInstall       1 Package(s)\n\nTotal size: 20 k\nInstalled size: 20 k\nDownloading Packages:\nRunning rpm_check_debug\nRunning Transaction Test\nTransaction Test Succeeded\nRunning Transaction\n\r  Installing : zabbix-release-2.2-1.el6.noarch                              1/1 \n\r  Verifying  : zabbix-release-2.2-1.el6.noarch                              1/1 \n\nInstalled:\n  zabbix-release.noarch 0:2.2-1.el6                                             \n\nComplete!\n"]}
+
+TASK [Installing zabbix-agent] *************************************************
+changed: [zubagent] => {"changed": true, "msg": "warning: rpmts_HdrFromFdno: Header V4 DSA/SHA1 Signature, key ID 79ea5ed4: NOKEY\nImporting GPG key 0x79EA5ED4:\n Userid : Zabbix SIA <packager@zabbix.com>\n Package: zabbix-release-2.2-1.el6.noarch (@/zabbix-release-2.2-1.el6.noarch)\n From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX\n", "rc": 0, "results": ["Loaded plugins: fastestmirror\nSetting up Install Process\nLoading mirror speeds from cached hostfile\n * base: ftp.byfly.by\n * epel: mirror.datacenter.by\n * extras: ftp.byfly.by\n * ius: mirrors.ircam.fr\n * updates: ftp.byfly.by\nResolving Dependencies\n--> Running transaction check\n---> Package zabbix-agent.x86_64 0:2.2.14-1.el6 will be installed\n--> Processing Dependency: zabbix for package: zabbix-agent-2.2.14-1.el6.x86_64\n--> Running transaction check\n---> Package zabbix.x86_64 0:2.2.14-1.el6 will be installed\n--> Finished Dependency Resolution\n\nDependencies Resolved\n\n================================================================================\n Package              Arch           Version               Repository      Size\n================================================================================\nInstalling:\n zabbix-agent         x86_64         2.2.14-1.el6          zabbix         160 k\nInstalling for dependencies:\n zabbix               x86_64         2.2.14-1.el6          zabbix         155 k\n\nTransaction Summary\n================================================================================\nInstall       2 Package(s)\n\nTotal download size: 315 k\nInstalled size: 1.1 M\nDownloading Packages:\n--------------------------------------------------------------------------------\nTotal                                           119 kB/s | 315 kB     00:02     \nRetrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-ZABBIX\nRunning rpm_check_debug\nRunning Transaction Test\nTransaction Test Succeeded\nRunning Transaction\n\r  Installing : zabbix-2.2.14-1.el6.x86_64                                   1/2 \n\r  Installing : zabbix-agent-2.2.14-1.el6.x86_64                             2/2 \n\r  Verifying  : zabbix-agent-2.2.14-1.el6.x86_64                             1/2 \n\r  Verifying  : zabbix-2.2.14-1.el6.x86_64                                   2/2 \n\nInstalled:\n  zabbix-agent.x86_64 0:2.2.14-1.el6                                            \n\nDependency Installed:\n  zabbix.x86_64 0:2.2.14-1.el6                                                  \n\nComplete!\n"]}
+
+TASK [Registering zabbix-agent] ************************************************
+changed: [zubagent] => {"changed": true, "cmd": "sh /vagrant/source/agent.sh", "delta": "0:00:00.169638", "end": "2016-09-28 18:19:33.149992", "rc": 0, "start": "2016-09-28 18:19:32.980354", "stderr": "  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0   103      0  63619 --:--:-- --:--:-- --:--:-- 63619\r  0    68    0    68    0   103   1169   1770 --:--:-- --:--:-- --:--:--     0\n  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current\n                                 Dload  Upload   Total   Spent    Left  Speed\n\r  0     0    0     0    0   281      0   597k --:--:-- --:--:-- --:--:--  597k\r  0    55    0    55    0   281    558   2852 --:--:-- --:--:-- --:--:--     0", "stdout": "HTTP/1.1 200 OK\r\nDate: Wed, 28 Sep 2016 17:19:32 GMT\r\nServer: Apache/2.2.15 (CentOS)\r\nX-Powered-By: PHP/5.3.3\r\nContent-Length: 55\r\nConnection: close\r\nContent-Type: application/json\r\n\r\n{\"jsonrpc\":\"2.0\",\"result\":{\"hostids\":[\"10117\"]},\"id\":1}", "stdout_lines": ["HTTP/1.1 200 OK", "Date: Wed, 28 Sep 2016 17:19:32 GMT", "Server: Apache/2.2.15 (CentOS)", "X-Powered-By: PHP/5.3.3", "Content-Length: 55", "Connection: close", "Content-Type: application/json", "", "{\"jsonrpc\":\"2.0\",\"result\":{\"hostids\":[\"10117\"]},\"id\":1}"], "warnings": []}
+
+TASK [Configuring zabbix-agent] ************************************************
+ok: [zubagent] => {"changed": false, "gid": 0, "group": "root", "mode": "0644", "owner": "root", "path": "/etc/zabbix/zabbix_agentd.conf", "size": 7569, "state": "file", "uid": 0}
+
+TASK [Change] ******************************************************************
+changed: [zubagent] => {"changed": true, "cmd": "cd /etc/zabbix/ && mod=0750 mod=0750 owner=zabix group=root", "delta": "0:00:00.001852", "end": "2016-09-28 18:19:33.798647", "rc": 0, "start": "2016-09-28 18:19:33.796795", "stderr": "", "stdout": "", "stdout_lines": [], "warnings": []}
+
+TASK [Starting zabbix-agent] ***************************************************
+changed: [zubagent] => {"changed": true, "enabled": true, "name": "zabbix-agent", "state": "started"}
+
+PLAY RECAP *********************************************************************
+zubagent                   : ok=7    changed=5    unreachable=0    failed=0   
+
+==> zubagent: Running provisioner: shell...
+    zubagent: Running: inline script
+==> zubagent: The Zabbix-AGENT is DONE!
